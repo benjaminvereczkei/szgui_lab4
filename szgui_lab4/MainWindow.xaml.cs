@@ -24,5 +24,7 @@ namespace szgui_lab4
         {
             InitializeComponent();
         }
+
+
     }
 }
