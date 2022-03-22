@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using szgui_lab4.Logic;
 
 namespace szgui_lab4
 {
@@ -24,7 +25,21 @@ namespace szgui_lab4
         {
             InitializeComponent();
         }
+        GameLogic Game = new GameLogic();
+        private void PlayerClick(object sender  ,RoutedEventArgs e)
+        {
+            var s = (Button)sender;
+            if (!String.IsNullOrWhiteSpace(s.Content?.ToString()))
+            {
+                return;
+            }
+            s.Content = Game.Player;
 
-
+            if (Game.Win())
+            {
+             //   Winscreen.visibility
+            }
+        }
+        
     }
 }
